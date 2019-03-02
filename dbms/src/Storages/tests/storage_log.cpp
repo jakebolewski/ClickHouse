@@ -70,6 +70,8 @@ try
 
     /// read from it
     {
+        Context context = Context::createGlobal();
+
         Names column_names;
         column_names.push_back("a");
         column_names.push_back("b");
