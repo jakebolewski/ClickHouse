@@ -77,5 +77,9 @@ target_link_libraries (limit_read_buffer2 PRIVATE clickhouse_common_io)
 add_executable (parse_date_time_best_effort parse_date_time_best_effort.cpp)
 target_link_libraries (parse_date_time_best_effort PRIVATE clickhouse_common_io)
 
+add_executable (tiledb_vfs_read tiledb_vfs_read.cpp)
+target_link_libraries (tiledb_vfs_read PRIVATE clickhouse_common_io)
+target_link_libraries (tiledb_vfs_read PRIVATE tiledb)
+
 add_executable (zlib_ng_bug zlib_ng_bug.cpp)
 target_link_libraries (zlib_ng_bug PRIVATE ${Poco_Foundation_LIBRARY})

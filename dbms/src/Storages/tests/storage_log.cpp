@@ -92,7 +92,7 @@ try
 
         WriteBufferFromOStream out_buf(std::cout);
 
-        LimitBlockInputStream in_limit(in, 10, 0);
+        LimitBlockInputStream in_limit(in, 100, 0);
         BlockOutputStreamPtr output = FormatFactory::instance().getOutput("TabSeparated", out_buf, sample, context);
 
         copyData(in_limit, *output);
