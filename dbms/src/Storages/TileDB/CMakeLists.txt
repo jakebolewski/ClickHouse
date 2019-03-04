@@ -1,0 +1,6 @@
+find_package(TileDB)
+include(${ClickHouse_SOURCE_DIR}/cmake/dbms_glob_sources.cmake)
+add_headers_and_sources(clickhouse_storage_tiledb .)
+add_library(clickhouse_storage_tiledb ${LINK_MODE} ${clickhouse_storage_tiledb_sources})
+target_link_libraries(clickhouse_storage_tiledb PRIVATE clickhouse_common_io)
+target_link_libraries(clickhouse_storage_tiledb PRIVATE TileDB::tiledb_shared)

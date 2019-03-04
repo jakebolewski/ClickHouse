@@ -28,6 +28,9 @@ void registerStorageMaterializedView(StorageFactory & factory);
 void registerStorageHDFS(StorageFactory & factory);
 #endif
 
+// TODO: TileDB
+void registerStorageTileDBVFS(StorageFactory & factory);
+
 #if USE_POCO_SQLODBC || USE_POCO_DATAODBC
 void registerStorageODBC(StorageFactory & factory);
 #endif
@@ -67,6 +70,9 @@ void registerStorages()
     #if USE_HDFS
     registerStorageHDFS(factory);
     #endif
+
+    // TODO: TileDB
+    registerStorageTileDBVFS(factory);
 
     #if USE_POCO_SQLODBC || USE_POCO_DATAODBC
     registerStorageODBC(factory);

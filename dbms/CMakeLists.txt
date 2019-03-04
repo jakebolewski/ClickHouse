@@ -294,6 +294,9 @@ if (USE_RDKAFKA)
     target_link_libraries (dbms PRIVATE clickhouse_storage_kafka)
 endif ()
 
+#TODO: CHANGE THIS
+target_link_libraries(dbms PRIVATE clickhouse_storage_tiledb)
+
 if (USE_PARQUET)
     target_link_libraries(dbms PRIVATE ${PARQUET_LIBRARY})
     if (NOT USE_INTERNAL_PARQUET_LIBRARY OR USE_INTERNAL_PARQUET_LIBRARY_NATIVE_CMAKE)
